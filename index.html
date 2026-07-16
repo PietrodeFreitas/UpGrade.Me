@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UpGrade.Me | Formatação e Backup de PC e Celular</title>
+    
+    <!-- Link para o CSS que vai deixar o site bonito -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Ícones externos (FontAwesome) para usarmos ícones de celular, PC, check, etc. -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- 1. CABEÇALHO (Menu / Logo) -->
+    <header class="header">
+        <div class="container header-container">
+            <div class="logo">
+                <h2>UpGrade<span>.Me</span></h2>
+            </div>
+            <nav class="nav">
+                <a href="#servicos">Serviços</a>
+                <a href="#beneficios">Por que nós?</a>
+                <a href="#faq">Dúvidas</a>
+                <a href="https://wa.me/SEU_NUMERO" class="btn-nav" target="_blank">Fazer Orçamento</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 2. SEÇÃO HERO (A primeira dobra do site, a mais importante!) -->
+    <section class="hero">
+        <div class="container hero-container">
+            <div class="hero-text">
+                <span class="tag">🚀 Celular & Computador como novos</span>
+                <h1>Seu aparelho travando? A gente resolve hoje.</h1>
+                <p>Formatação profissional, backup 100% seguro de todas as suas fotos/arquivos e reinstalação rápida de sistemas para PC, Notebook e Smartphone.</p>
+                
+                <div class="hero-buttons">
+                    <a href="https://wa.me/SEU_NUMERO" class="btn-primary" target="_blank">
+                        <i class="fa-brands fa-whatsapp"></i> Chame no WhatsApp
+                    </a>
+                    <a href="#servicos" class="btn-secondary">Ver Serviços</a>
+                </div>
+                
+                <div class="hero-trust">
+                    <span><i class="fa-solid fa-shield-halved"></i> Backup 100% Seguro</span>
+                    <span><i class="fa-solid fa-bolt"></i> Rapidez na Entrega</span>
+                </div>
+            </div>
+            
+            <div class="hero-image">
+                <!-- Depois você pode colocar uma foto bem bonita aqui nesta pasta -->
+                <img src="assets/images/hero-devices.png" alt="Computador e Celular rápidos" class="img-responsive">
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. SEÇÃO DE SERVIÇOS -->
+    <section id="servicos" class="services">
+        <div class="container">
+            <h2 class="section-title">O que fazemos por você</h2>
+            <p class="section-subtitle">Soluções completas para fazer seus aparelhos voltarem a voar.</p>
+            
+            <div class="services-grid">
+                <!-- Serviço 1 -->
+                <div class="service-card">
+                    <div class="service-icon"><i class="fa-solid fa-laptop"></i></div>
+                    <h3>Formatação de PC & Notebook</h3>
+                    <p>Instalação do Windows/Linux limpo, drivers atualizados, antivírus e programas essenciais de forma rápida.</p>
+                </div>
+
+                <!-- Serviço 2 -->
+                <div class="service-card">
+                    <div class="service-icon"><i class="fa-solid fa-mobile-screen-button"></i></div>
+                    <h3>Restauração de Celular</h3>
+                    <p>Limpeza profunda do sistema (Android e iOS), remoção de travamentos e otimização de memória.</p>
+                </div>
+
+                <!-- Serviço 3 -->
+                <div class="service-card">
+                    <div class="service-icon"><i class="fa-solid fa-database"></i></div>
+                    <h3>Backup Seguro e Recuperação</h3>
+                    <p>Cópia de segurança garantida de fotos, contatos, conversas e arquivos antes de qualquer procedimento. Zero perda!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. SEÇÃO DIFERENCIAIS (Por que a UpGrade.Me?) -->
+    <section id="beneficios" class="benefits">
+        <div class="container">
+            <h2 class="section-title">Por que escolher a UpGrade.Me?</h2>
+            <p class="section-subtitle">Sua segurança e a velocidade do seu aparelho são nossa prioridade.</p>
+
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <div class="benefit-icon"><i class="fa-solid fa-user-shield"></i></div>
+                    <h4>Privacidade Absoluta</h4>
+                    <p>Seus arquivos pessoais, fotos e conversas são tratados com sigilo total. Seus dados não saem do seu controle.</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon"><i class="fa-solid fa-gauge-high"></i></div>
+                    <h4>Desempenho Máximo</h4>
+                    <p>Não usamos programas piratas ou modificados que pesam no sistema. Instalamos tudo limpo para o máximo rendimento.</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon"><i class="fa-solid fa-clock"></i></div>
+                    <h4>Serviço Express</h4>
+                    <p>Sabemos que você não pode ficar sem trabalhar ou se comunicar. Entregamos seu aparelho pronto no menor tempo possível.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. SEÇÃO FAQ (Dúvidas Frequentes) -->
+    <section id="faq" class="faq">
+        <div class="container">
+            <h2 class="section-title">Dúvidas Frequentes</h2>
+            <p class="section-subtitle">Respondemos às principais perguntas para você ficar totalmente tranquilo.</p>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <h3><i class="fa-solid fa-circle-question"></i> Eu vou perder minhas fotos e conversas do WhatsApp?</h3>
+                    <p><strong>Não!</strong> Nós realizamos um backup completo de todas as suas fotos, documentos, contatos e até do histórico do seu WhatsApp antes de iniciar o processo. Tudo é restaurado exatamente como estava.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3><i class="fa-solid fa-circle-question"></i> Quanto tempo demora o serviço?</h3>
+                    <p>A maioria dos serviços de formatação e otimização é entregue no mesmo dia, dependendo da quantidade de dados para backup. Combinamos o prazo exato com você antes de começar!</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3><i class="fa-solid fa-circle-question"></i> Vocês instalam antivírus e programas básicos?</h3>
+                    <p>Sim! O computador já vai pronto para uso com antivírus atualizado, navegadores de internet (Chrome/Edge), leitores de PDF e os programas essenciais para o seu dia a dia.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. RODAPÉ (Footer) -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <p>&copy; 2026 UpGrade.Me - Todos os direitos reservados.</p>
+            <p>Serviço profissional de assistência técnica de software.</p>
+        </div>
+    </footer>
+
+    <!-- Conecta o JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>
