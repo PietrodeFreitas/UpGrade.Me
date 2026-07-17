@@ -1,6 +1,7 @@
 const SERVICOS = new Set([
   "formatacao-pc",
   "restauracao-celular",
+  "tablet",
   "backup",
   "outro",
 ]);
