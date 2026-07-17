@@ -5,75 +5,99 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Termos de Uso | UpGrade.Me</title>
     <meta name="description" content="Termos de Uso dos serviços da UpGrade.Me.">
-    <link rel="icon" href="assets/brand/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="assets/brand/favicon-round.png" type="image/png">
+    <script>
+      (function () {
+        try {
+          var saved = localStorage.getItem("upgrade_me_theme");
+          var theme = saved || (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+          document.documentElement.setAttribute("data-theme", theme);
+        } catch (e) {
+          document.documentElement.setAttribute("data-theme", "dark");
+        }
+      })();
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body>
+<body class="legal-body">
     <header class="header">
         <div class="container header-container">
             <a href="index.html" class="logo" aria-label="UpGrade.Me início">
-                <img class="logo-icon" src="assets/brand/logo-mark.svg" alt="" width="36" height="36">
+                <img class="logo-icon" src="assets/brand/logo-mark.png" alt="" width="36" height="36">
                 <span class="logo-text">
                     <span class="logo-mark">UpGrade</span><span class="logo-dot">.Me</span>
                 </span>
             </a>
+            <div class="header-actions">
+                <button class="theme-toggle" type="button" aria-label="Alternar tema" title="Alternar tema">
+                    <i class="fa-solid fa-moon icon-moon" aria-hidden="true"></i>
+                    <i class="fa-solid fa-sun icon-sun" aria-hidden="true"></i>
+                </button>
+                <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="main-nav">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
             <nav class="nav" id="main-nav">
                 <a href="index.html#servicos">Serviços</a>
                 <a href="index.html#faq">Dúvidas</a>
-                <a href="#" class="btn-nav js-whatsapp" target="_blank" rel="noopener noreferrer">Fazer Orçamento</a>
+                <a href="#" class="btn-nav js-whatsapp" target="_blank" rel="noopener noreferrer">Orçamento</a>
             </nav>
         </div>
     </header>
 
     <main class="legal-page">
-        <div class="container legal-wrap">
-            <a class="legal-back" href="index.html">&larr; Voltar ao site</a>
-            <h1>Termos de Uso</h1>
-            <p class="legal-meta">Última atualização: 16 de julho de 2026</p>
+        <div class="container">
+            <article class="legal-card">
+                <a class="legal-back" href="index.html">&larr; Voltar ao site</a>
+                <h1>Termos de Uso</h1>
+                <p class="legal-meta">Última atualização: 16 de julho de 2026</p>
 
-            <p>Estes Termos de Uso regulam o acesso ao site e a contratação dos serviços da <strong>UpGrade.Me</strong>. Ao utilizar o site ou solicitar um serviço, você declara que leu e concorda com estas condições.</p>
+                <p>Estes Termos de Uso regulam o acesso ao site e a contratação dos serviços da <strong>UpGrade.Me</strong>. Ao utilizar o site ou solicitar um serviço, você declara que leu e concorda com estas condições.</p>
 
-            <h2>1. Serviços oferecidos</h2>
-            <p>A UpGrade.Me presta serviços de assistência técnica de software, incluindo formatação de computadores com Windows, restauração/otimização de celulares, backup e recuperação de dados, conforme combinado com o cliente.</p>
+                <h2>1. Serviços oferecidos</h2>
+                <p>A UpGrade.Me presta serviços de assistência técnica de software, incluindo formatação de computadores com Windows, restauração/otimização de celulares e tablets, backup e recuperação de dados, conforme combinado com o cliente. Não realizamos troca de peças nem reparos de hardware.</p>
 
-            <h2>2. Orçamento e contratação</h2>
-            <ul>
-                <li>Orçamentos podem ser solicitados pelo site ou WhatsApp.</li>
-                <li>O valor, prazo e escopo do serviço serão confirmados antes do início.</li>
-                <li>Alterações no escopo podem gerar ajuste de preço e prazo.</li>
-            </ul>
+                <h2>2. Orçamento e contratação</h2>
+                <ul>
+                    <li>Orçamentos podem ser solicitados pelo site ou WhatsApp.</li>
+                    <li>O valor, prazo e escopo do serviço serão confirmados antes do início.</li>
+                    <li>Alterações no escopo podem gerar ajuste de preço e prazo.</li>
+                </ul>
 
-            <h2>3. Backup e responsabilidade sobre dados</h2>
-            <p>Sempre que possível, realizamos backup antes dos procedimentos. Ainda assim, o cliente deve informar dados críticos e, preferencialmente, manter cópia própria quando disponível. A UpGrade.Me adota cuidado profissional, mas não se responsabiliza por perdas decorrentes de falhas pré-existentes de hardware, mídia corrompida ou limitações técnicas fora do nosso controle.</p>
+                <h2>3. Backup e responsabilidade sobre dados</h2>
+                <p>Sempre que possível, realizamos backup antes dos procedimentos. Ainda assim, o cliente deve informar dados críticos e, preferencialmente, manter cópia própria quando disponível. A UpGrade.Me adota cuidado profissional, mas não se responsabiliza por perdas decorrentes de falhas pré-existentes de hardware, mídia corrompida ou limitações técnicas fora do nosso controle.</p>
 
-            <h2>4. Obrigações do cliente</h2>
-            <ul>
-                <li>Fornecer informações corretas sobre o aparelho e o problema.</li>
-                <li>Informar senhas/acessos necessários apenas para execução do serviço.</li>
-                <li>Retirar o aparelho no prazo combinado após a conclusão.</li>
-            </ul>
+                <h2>4. Obrigações do cliente</h2>
+                <ul>
+                    <li>Fornecer informações corretas sobre o aparelho e o problema.</li>
+                    <li>Informar senhas/acessos necessários apenas para execução do serviço.</li>
+                    <li>Retirar o aparelho no prazo combinado após a conclusão.</li>
+                </ul>
 
-            <h2>5. Uso do site</h2>
-            <p>É proibido utilizar o site para fins ilícitos, tentar invadir sistemas, ou reproduzir conteúdos da UpGrade.Me sem autorização.</p>
+                <h2>5. Uso do site</h2>
+                <p>É proibido utilizar o site para fins ilícitos, tentar invadir sistemas, ou reproduzir conteúdos da UpGrade.Me sem autorização.</p>
 
-            <h2>6. Propriedade intelectual</h2>
-            <p>Marca, textos, layout e demais conteúdos do site pertencem à UpGrade.Me, salvo indicação em contrário.</p>
+                <h2>6. Propriedade intelectual</h2>
+                <p>Marca, textos, layout e demais conteúdos do site pertencem à UpGrade.Me, salvo indicação em contrário.</p>
 
-            <h2>7. Limitação de responsabilidade</h2>
-            <p>O site é informado de forma geral sobre os serviços. Disponibilidade, prazos e resultados podem variar conforme o estado do aparelho e o volume de dados.</p>
+                <h2>7. Limitação de responsabilidade</h2>
+                <p>O site é informado de forma geral sobre os serviços. Disponibilidade, prazos e resultados podem variar conforme o estado do aparelho e o volume de dados.</p>
 
-            <h2>8. Privacidade</h2>
-            <p>O tratamento de dados pessoais segue nossa <a href="politica-de-privacidade.html">Política de Privacidade</a> e a LGPD.</p>
+                <h2>8. Privacidade</h2>
+                <p>O tratamento de dados pessoais segue nossa <a href="politica-de-privacidade.html">Política de Privacidade</a> e a LGPD.</p>
 
-            <h2>9. Alterações</h2>
-            <p>Podemos atualizar estes Termos a qualquer momento. A versão vigente será sempre a publicada nesta página.</p>
+                <h2>9. Alterações</h2>
+                <p>Podemos atualizar estes Termos a qualquer momento. A versão vigente será sempre a publicada nesta página.</p>
 
-            <h2>10. Contato</h2>
-            <p>Dúvidas sobre estes Termos: fale conosco pelo WhatsApp disponível no site.</p>
+                <h2>10. Contato</h2>
+                <p>Dúvidas sobre estes Termos: fale conosco pelo WhatsApp disponível no site.</p>
+            </article>
         </div>
     </main>
 

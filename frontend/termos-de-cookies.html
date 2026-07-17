@@ -5,58 +5,82 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Termos de Cookies | UpGrade.Me</title>
     <meta name="description" content="Informações sobre o uso de cookies no site da UpGrade.Me.">
-    <link rel="icon" href="assets/brand/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="assets/brand/favicon-round.png" type="image/png">
+    <script>
+      (function () {
+        try {
+          var saved = localStorage.getItem("upgrade_me_theme");
+          var theme = saved || (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+          document.documentElement.setAttribute("data-theme", theme);
+        } catch (e) {
+          document.documentElement.setAttribute("data-theme", "dark");
+        }
+      })();
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body>
+<body class="legal-body">
     <header class="header">
         <div class="container header-container">
             <a href="index.html" class="logo" aria-label="UpGrade.Me início">
-                <img class="logo-icon" src="assets/brand/logo-mark.svg" alt="" width="36" height="36">
+                <img class="logo-icon" src="assets/brand/logo-mark.png" alt="" width="36" height="36">
                 <span class="logo-text">
                     <span class="logo-mark">UpGrade</span><span class="logo-dot">.Me</span>
                 </span>
             </a>
+            <div class="header-actions">
+                <button class="theme-toggle" type="button" aria-label="Alternar tema" title="Alternar tema">
+                    <i class="fa-solid fa-moon icon-moon" aria-hidden="true"></i>
+                    <i class="fa-solid fa-sun icon-sun" aria-hidden="true"></i>
+                </button>
+                <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="main-nav">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
             <nav class="nav" id="main-nav">
                 <a href="index.html#servicos">Serviços</a>
                 <a href="index.html#faq">Dúvidas</a>
-                <a href="#" class="btn-nav js-whatsapp" target="_blank" rel="noopener noreferrer">Fazer Orçamento</a>
+                <a href="#" class="btn-nav js-whatsapp" target="_blank" rel="noopener noreferrer">Orçamento</a>
             </nav>
         </div>
     </header>
 
     <main class="legal-page">
-        <div class="container legal-wrap">
-            <a class="legal-back" href="index.html">&larr; Voltar ao site</a>
-            <h1>Termos de Cookies</h1>
-            <p class="legal-meta">Última atualização: 17 de julho de 2026</p>
+        <div class="container">
+            <article class="legal-card">
+                <a class="legal-back" href="index.html">&larr; Voltar ao site</a>
+                <h1>Termos de Cookies</h1>
+                <p class="legal-meta">Última atualização: 17 de julho de 2026</p>
 
-            <p>Este documento explica como a <strong>UpGrade.Me</strong> usa cookies e tecnologias semelhantes no site.</p>
+                <p>Este documento explica como a <strong>UpGrade.Me</strong> usa cookies e tecnologias semelhantes no site.</p>
 
-            <h2>1. O que são cookies?</h2>
-            <p>Cookies são pequenos arquivos armazenados no seu navegador. Eles ajudam o site a lembrar preferências e a funcionar corretamente.</p>
+                <h2>1. O que são cookies?</h2>
+                <p>Cookies são pequenos arquivos armazenados no seu navegador. Eles ajudam o site a lembrar preferências e a funcionar corretamente.</p>
 
-            <h2>2. Quais cookies usamos</h2>
-            <ul>
-                <li><strong>Essenciais:</strong> necessários para o funcionamento básico (ex.: lembrar sua escolha de cookies).</li>
-                <li><strong>De preferência / experiência:</strong> usados apenas se você aceitar, para melhorar a navegação.</li>
-            </ul>
+                <h2>2. Quais cookies usamos</h2>
+                <ul>
+                    <li><strong>Essenciais:</strong> necessários para o funcionamento básico (ex.: lembrar sua escolha de cookies e tema).</li>
+                    <li><strong>De preferência / experiência:</strong> usados apenas se você aceitar, para melhorar a navegação.</li>
+                </ul>
 
-            <h2>3. Base e consentimento</h2>
-            <p>Cookies essenciais podem ser usados para o site operar. Demais cookies dependem do seu consentimento no banner. Você pode escolher “Aceitar” ou “Só essenciais”.</p>
+                <h2>3. Base e consentimento</h2>
+                <p>Cookies essenciais podem ser usados para o site operar. Demais cookies dependem do seu consentimento no banner. Você pode escolher “Aceitar” ou “Só essenciais”.</p>
 
-            <h2>4. Como gerenciar</h2>
-            <p>Além do banner, você pode limpar ou bloquear cookies nas configurações do navegador. Isso pode afetar algumas funções do site.</p>
+                <h2>4. Como gerenciar</h2>
+                <p>Além do banner, você pode limpar ou bloquear cookies nas configurações do navegador. Isso pode afetar algumas funções do site.</p>
 
-            <h2>5. Relação com a LGPD</h2>
-            <p>O tratamento de dados pessoais ligados a cookies segue nossa <a href="politica-de-privacidade.html">Política de Privacidade</a> e a Lei nº 13.709/2018 (LGPD).</p>
+                <h2>5. Relação com a LGPD</h2>
+                <p>O tratamento de dados pessoais ligados a cookies segue nossa <a href="politica-de-privacidade.html">Política de Privacidade</a> e a Lei nº 13.709/2018 (LGPD).</p>
 
-            <h2>6. Contato</h2>
-            <p>Dúvidas sobre cookies: fale conosco pelo WhatsApp disponível no site.</p>
+                <h2>6. Contato</h2>
+                <p>Dúvidas sobre cookies: fale conosco pelo WhatsApp disponível no site.</p>
+            </article>
         </div>
     </main>
 

@@ -5,87 +5,111 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Política de Privacidade e LGPD | UpGrade.Me</title>
     <meta name="description" content="Política de Privacidade e informações sobre LGPD da UpGrade.Me.">
-    <link rel="icon" href="assets/brand/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="assets/brand/favicon-round.png" type="image/png">
+    <script>
+      (function () {
+        try {
+          var saved = localStorage.getItem("upgrade_me_theme");
+          var theme = saved || (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+          document.documentElement.setAttribute("data-theme", theme);
+        } catch (e) {
+          document.documentElement.setAttribute("data-theme", "dark");
+        }
+      })();
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body>
+<body class="legal-body">
     <header class="header">
         <div class="container header-container">
             <a href="index.html" class="logo" aria-label="UpGrade.Me início">
-                <img class="logo-icon" src="assets/brand/logo-mark.svg" alt="" width="36" height="36">
+                <img class="logo-icon" src="assets/brand/logo-mark.png" alt="" width="36" height="36">
                 <span class="logo-text">
                     <span class="logo-mark">UpGrade</span><span class="logo-dot">.Me</span>
                 </span>
             </a>
+            <div class="header-actions">
+                <button class="theme-toggle" type="button" aria-label="Alternar tema" title="Alternar tema">
+                    <i class="fa-solid fa-moon icon-moon" aria-hidden="true"></i>
+                    <i class="fa-solid fa-sun icon-sun" aria-hidden="true"></i>
+                </button>
+                <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="main-nav">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
             <nav class="nav" id="main-nav">
                 <a href="index.html#servicos">Serviços</a>
                 <a href="index.html#faq">Dúvidas</a>
-                <a href="#" class="btn-nav js-whatsapp" target="_blank" rel="noopener noreferrer">Fazer Orçamento</a>
+                <a href="#" class="btn-nav js-whatsapp" target="_blank" rel="noopener noreferrer">Orçamento</a>
             </nav>
         </div>
     </header>
 
     <main class="legal-page">
-        <div class="container legal-wrap">
-            <a class="legal-back" href="index.html">&larr; Voltar ao site</a>
-            <h1>Política de Privacidade</h1>
-            <p class="legal-meta">Última atualização: 16 de julho de 2026</p>
+        <div class="container">
+            <article class="legal-card">
+                <a class="legal-back" href="index.html">&larr; Voltar ao site</a>
+                <h1>Política de Privacidade</h1>
+                <p class="legal-meta">Última atualização: 16 de julho de 2026</p>
 
-            <p>Esta Política descreve como a <strong>UpGrade.Me</strong> trata dados pessoais no site e na prestação dos serviços, em conformidade com a Lei Geral de Proteção de Dados (Lei nº 13.709/2018 — LGPD).</p>
+                <p>Esta Política descreve como a <strong>UpGrade.Me</strong> trata dados pessoais no site e na prestação dos serviços, em conformidade com a Lei Geral de Proteção de Dados (Lei nº 13.709/2018 — LGPD).</p>
 
-            <h2 id="lgpd">1. LGPD — nosso compromisso</h2>
-            <p>Tratamos dados pessoais de forma transparente, segura e apenas para finalidades legítimas ligadas ao atendimento, orçamento e execução dos serviços contratados.</p>
+                <h2 id="lgpd">1. LGPD — nosso compromisso</h2>
+                <p>Tratamos dados pessoais de forma transparente, segura e apenas para finalidades legítimas ligadas ao atendimento, orçamento e execução dos serviços contratados.</p>
 
-            <h2>2. Quais dados podemos coletar</h2>
-            <ul>
-                <li><strong>Dados de contato:</strong> nome, telefone/WhatsApp e demais informações enviadas por você.</li>
-                <li><strong>Dados do atendimento:</strong> descrição do problema, modelo do aparelho e preferências de serviço.</li>
-                <li><strong>Dados técnicos do site:</strong> informações básicas de navegação (como tipo de dispositivo), quando aplicável pela plataforma de hospedagem.</li>
-                <li><strong>Dados do aparelho:</strong> apenas os necessários para executar backup, formatação ou otimização, com acesso autorizado por você.</li>
-            </ul>
+                <h2>2. Quais dados podemos coletar</h2>
+                <ul>
+                    <li><strong>Dados de contato:</strong> nome, telefone/WhatsApp e demais informações enviadas por você.</li>
+                    <li><strong>Dados do atendimento:</strong> descrição do problema, modelo do aparelho e preferências de serviço.</li>
+                    <li><strong>Dados técnicos do site:</strong> informações básicas de navegação (como tipo de dispositivo), quando aplicável pela plataforma de hospedagem.</li>
+                    <li><strong>Dados do aparelho:</strong> apenas os necessários para executar backup, formatação ou otimização, com acesso autorizado por você.</li>
+                </ul>
 
-            <h2>3. Para que usamos os dados</h2>
-            <ul>
-                <li>Responder solicitações e enviar orçamentos.</li>
-                <li>Executar o serviço contratado.</li>
-                <li>Comunicar prazos, status e orientações.</li>
-                <li>Cumprir obrigações legais e proteger direitos da UpGrade.Me e dos clientes.</li>
-            </ul>
+                <h2>3. Para que usamos os dados</h2>
+                <ul>
+                    <li>Responder solicitações e enviar orçamentos.</li>
+                    <li>Executar o serviço contratado.</li>
+                    <li>Comunicar prazos, status e orientações.</li>
+                    <li>Cumprir obrigações legais e proteger direitos da UpGrade.Me e dos clientes.</li>
+                </ul>
 
-            <h2>4. Base legal</h2>
-            <p>O tratamento pode ocorrer com base em: execução de contrato ou procedimentos preliminares; consentimento; cumprimento de obrigação legal; e legítimo interesse, quando cabível e respeitando seus direitos.</p>
+                <h2>4. Base legal</h2>
+                <p>O tratamento pode ocorrer com base em: execução de contrato ou procedimentos preliminares; consentimento; cumprimento de obrigação legal; e legítimo interesse, quando cabível e respeitando seus direitos.</p>
 
-            <h2>5. Compartilhamento</h2>
-            <p>Não vendemos seus dados. Podemos compartilhar informações apenas com prestadores essenciais (por exemplo, hospedagem do site) ou quando houver obrigação legal/ordem de autoridade competente.</p>
+                <h2>5. Compartilhamento</h2>
+                <p>Não vendemos seus dados. Podemos compartilhar informações apenas com prestadores essenciais (por exemplo, hospedagem do site) ou quando houver obrigação legal/ordem de autoridade competente.</p>
 
-            <h2>6. Cookies e tecnologias semelhantes</h2>
-            <p>O site pode utilizar recursos da plataforma de hospedagem para funcionamento e medição básica. Você pode gerenciar cookies nas configurações do navegador.</p>
+                <h2>6. Cookies e tecnologias semelhantes</h2>
+                <p>O site pode utilizar recursos da plataforma de hospedagem para funcionamento e medição básica. Você pode gerenciar cookies nas configurações do navegador. Veja também os <a href="termos-de-cookies.html">Termos de Cookies</a>.</p>
 
-            <h2>7. Retenção e segurança</h2>
-            <p>Mantemos dados pelo tempo necessário para as finalidades desta Política ou exigências legais. Adotamos medidas razoáveis de segurança para proteger informações contra acesso indevido, perda ou uso não autorizado.</p>
+                <h2>7. Retenção e segurança</h2>
+                <p>Mantemos dados pelo tempo necessário para as finalidades desta Política ou exigências legais. Adotamos medidas razoáveis de segurança para proteger informações contra acesso indevido, perda ou uso não autorizado.</p>
 
-            <h2>8. Seus direitos (LGPD)</h2>
-            <p>Você pode solicitar, conforme a lei:</p>
-            <ul>
-                <li>Confirmação da existência de tratamento</li>
-                <li>Acesso, correção ou atualização</li>
-                <li>Anonimização, bloqueio ou eliminação, quando cabível</li>
-                <li>Informação sobre compartilhamentos</li>
-                <li>Revogação de consentimento, quando essa for a base utilizada</li>
-            </ul>
+                <h2>8. Seus direitos (LGPD)</h2>
+                <p>Você pode solicitar, conforme a lei:</p>
+                <ul>
+                    <li>Confirmação da existência de tratamento</li>
+                    <li>Acesso, correção ou atualização</li>
+                    <li>Anonimização, bloqueio ou eliminação, quando cabível</li>
+                    <li>Informação sobre compartilhamentos</li>
+                    <li>Revogação de consentimento, quando essa for a base utilizada</li>
+                </ul>
 
-            <h2>9. Como exercer seus direitos</h2>
-            <p>Para solicitações relacionadas à privacidade e LGPD, entre em contato pelo WhatsApp disponível no site, informando o assunto “LGPD / Privacidade”.</p>
+                <h2>9. Como exercer seus direitos</h2>
+                <p>Para solicitações relacionadas à privacidade e LGPD, entre em contato pelo WhatsApp disponível no site, informando o assunto “LGPD / Privacidade”.</p>
 
-            <h2>10. Alterações desta Política</h2>
-            <p>Podemos atualizar este documento periodicamente. A versão atual estará sempre publicada nesta página.</p>
+                <h2>10. Alterações desta Política</h2>
+                <p>Podemos atualizar este documento periodicamente. A versão atual estará sempre publicada nesta página.</p>
 
-            <h2>11. Contato do controlador</h2>
-            <p>Controlador: UpGrade.Me. Canal de contato: WhatsApp indicado no site.</p>
+                <h2>11. Contato do controlador</h2>
+                <p>Controlador: UpGrade.Me. Canal de contato: WhatsApp indicado no site.</p>
+            </article>
         </div>
     </main>
 

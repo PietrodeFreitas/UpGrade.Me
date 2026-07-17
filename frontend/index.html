@@ -4,8 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UpGrade.Me | Formatação e Backup de PC, Celular e Tablet</title>
-    <meta name="description" content="Formatação, backup seguro e otimização de PC, notebook, celular e tablet. Serviço de software — sem troca de peças.">
-    <link rel="icon" href="assets/brand/favicon.svg" type="image/svg+xml">
+    <meta name="description" content="Formatação, backup seguro, limpeza e otimização de PC, notebook, celular e tablet. Não realizamos troca de peças.">
+    <link rel="icon" href="assets/brand/favicon-round.png" type="image/png">
+    <script>
+      (function () {
+        try {
+          var saved = localStorage.getItem("upgrade_me_theme");
+          var theme = saved || (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+          document.documentElement.setAttribute("data-theme", theme);
+        } catch (e) {
+          document.documentElement.setAttribute("data-theme", "dark");
+        }
+      })();
+    </script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,24 +30,31 @@
     <header class="header">
         <div class="container header-container">
             <a href="index.html" class="logo" aria-label="UpGrade.Me início">
-                <img class="logo-icon" src="assets/brand/logo-mark.svg" alt="" width="36" height="36">
+                <img class="logo-icon" src="assets/brand/logo-mark.png" alt="" width="36" height="36">
                 <span class="logo-text">
                     <span class="logo-mark">UpGrade</span><span class="logo-dot">.Me</span>
                 </span>
             </a>
 
-            <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="main-nav">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+            <div class="header-actions">
+                <button class="theme-toggle" type="button" aria-label="Alternar tema" title="Alternar tema">
+                    <i class="fa-solid fa-moon icon-moon" aria-hidden="true"></i>
+                    <i class="fa-solid fa-sun icon-sun" aria-hidden="true"></i>
+                </button>
+
+                <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="main-nav">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
 
             <nav class="nav" id="main-nav">
                 <a href="#servicos">Serviços</a>
                 <a href="#beneficios">Por que nós?</a>
                 <a href="#comunidade">Comunidade</a>
                 <a href="#faq">Dúvidas</a>
-                <a href="#" class="btn-nav js-whatsapp" target="_blank" rel="noopener noreferrer">Fazer Orçamento</a>
+                <a href="#" class="btn-nav js-whatsapp" target="_blank" rel="noopener noreferrer">Orçamento rápido</a>
             </nav>
         </div>
     </header>
@@ -46,11 +64,21 @@
         <div class="container hero-container">
             <div class="hero-text reveal">
                 <div class="hero-brand">
-                    <img class="logo-icon" src="assets/brand/logo-mark.svg" alt="" width="44" height="44">
+                    <img class="logo-icon" src="assets/brand/logo-mark.png" alt="" width="44" height="44">
                     <span class="hero-brand-text">UpGrade<span>.Me</span></span>
                 </div>
                 <h1>Cuidado completo para PC, celular e tablet.</h1>
-                <p>Formatação, backup seguro, limpeza e otimização de software — aparelhos rápidos e estáveis, sem mexer em hardware.</p>
+                <p>Formatação, backup seguro, limpeza e otimização — seus aparelhos rápidos, organizados e prontos para o dia a dia.</p>
+                <div class="hero-cta">
+                    <a href="#" class="btn-primary hero-cta-button js-whatsapp" target="_blank" rel="noopener noreferrer">
+                        <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+                        Pedir orçamento rápido
+                    </a>
+                    <span class="hero-cta-note">
+                        <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+                        Sem compromisso: conte o problema e receba uma orientação inicial.
+                    </span>
+                </div>
             </div>
 
             <div class="hero-image reveal">
@@ -59,15 +87,24 @@
         </div>
     </section>
 
-    <section id="servicos" class="services">
+    <section class="scope-banner">
+        <div class="container">
+            <div class="scope-note reveal" role="note">
+                <div class="scope-note-icon" aria-hidden="true">
+                    <i class="fa-solid fa-triangle-exclamation"></i>
+                </div>
+                <div>
+                    <h2>O que atendemos</h2>
+                    <p>Fazemos <strong>formatação, limpeza, backup, instalação e configuração</strong> de computadores, celulares e tablets. Não realizamos troca de tela, bateria, placa ou outras peças.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="servicos" class="section services">
         <div class="container">
             <h2 class="section-title reveal">O que fazemos por você</h2>
-            <p class="section-subtitle reveal">Soluções de software para PC, notebook, celular e tablet.</p>
-
-            <div class="scope-note reveal" role="note">
-                <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
-                <p><strong>Só software.</strong> Não trocamos peças e não fazemos reparo de hardware (tela, bateria, placa, conectores etc.).</p>
-            </div>
+            <p class="section-subtitle reveal">Formatação, limpeza, backup e configuração para PC, notebook, celular e tablet.</p>
 
             <div class="services-grid">
                 <article class="service-card reveal">
@@ -97,7 +134,7 @@
         </div>
     </section>
 
-    <section id="beneficios" class="benefits">
+    <section id="beneficios" class="section section--alt benefits">
         <div class="container">
             <h2 class="section-title reveal">Por que escolher a UpGrade.Me?</h2>
             <p class="section-subtitle reveal">Segurança dos seus dados e clareza no que fazemos (e no que não fazemos).</p>
@@ -116,13 +153,13 @@
                 <article class="benefit-item reveal">
                     <div class="benefit-icon"><i class="fa-solid fa-screwdriver-wrench" aria-hidden="true"></i></div>
                     <h4>Escopo transparente</h4>
-                    <p>Foco em software. Se precisar de troca de peça ou conserto físico, orientamos com honestidade.</p>
+                    <p>Deixamos claro o que podemos fazer. Se o aparelho precisar de troca de peça, avisamos antes.</p>
                 </article>
             </div>
         </div>
     </section>
 
-    <section id="comunidade" class="community">
+    <section id="comunidade" class="section community">
         <div class="container">
             <h2 class="section-title reveal">Comunidade UpGrade.Me</h2>
             <p class="section-subtitle reveal">Dicas, recomendações de aparelhos e contato direto.</p>
@@ -145,7 +182,7 @@
         </div>
     </section>
 
-    <section id="faq" class="faq">
+    <section id="faq" class="section section--alt faq">
         <div class="container">
             <h2 class="section-title reveal">Dúvidas frequentes</h2>
             <p class="section-subtitle reveal">Respostas claras para você contratar com confiança.</p>
@@ -167,7 +204,7 @@
                         <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
                     </button>
                     <div class="faq-answer">
-                        <p><strong>Não.</strong> A UpGrade.Me trabalha apenas com software: formatação, backup, limpeza e otimização. Não trocamos tela, bateria, conectores nem fazemos solda/placa.</p>
+                        <p><strong>Não.</strong> Fazemos formatação, backup, limpeza, instalação e configuração. Não trocamos tela, bateria, conectores, placa ou outras peças.</p>
                     </div>
                 </div>
 
@@ -215,14 +252,26 @@
     </section>
 
     <section class="cta">
-        <div class="container cta-box reveal">
-            <div class="cta-text">
-                <h2>Pronto para liberar seu aparelho?</h2>
-                <p>Chama no WhatsApp e peça seu orçamento agora.</p>
+        <div class="container">
+            <div class="cta-box reveal">
+                <div class="cta-text">
+                    <div class="cta-kicker">
+                        <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+                        Atendimento direto
+                    </div>
+                    <h2>Quer um orçamento sem compromisso?</h2>
+                    <p>Chame no WhatsApp, explique o aparelho e o problema. Respondemos com prazo e valor claros.</p>
+                    <div class="cta-phone">
+                        <i class="fa-solid fa-phone" aria-hidden="true"></i>
+                        (19) 99253-8677
+                    </div>
+                </div>
+                <div class="cta-actions">
+                    <a href="#" class="btn-primary js-whatsapp" target="_blank" rel="noopener noreferrer">
+                        <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> Falar no WhatsApp
+                    </a>
+                </div>
             </div>
-            <a href="#" class="btn-primary js-whatsapp" target="_blank" rel="noopener noreferrer">
-                <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> Pedir orçamento
-            </a>
         </div>
     </section>
 
@@ -230,7 +279,7 @@
         <div class="container footer-grid">
             <div class="footer-brand-block">
                 <p class="footer-brand">UpGrade<span>.Me</span></p>
-                <p>Assistência técnica de software: backup, formatação e otimização de PC, celular e tablet.</p>
+                <p>Formatação, backup, limpeza e configuração de PC, celular e tablet.</p>
             </div>
 
             <div class="footer-links">

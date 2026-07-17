@@ -1,6 +1,5 @@
 /**
- * Contatos e redes — cole os links quando tiver.
- * WhatsApp: DDI + DDD + número (só dígitos).
+ * Contatos e redes
  */
 const WHATSAPP_NUMBER = "5519992538677";
 const WHATSAPP_MESSAGE = "Olá! Quero um orçamento da UpGrade.Me.";
@@ -11,6 +10,7 @@ const SOCIAL = {
 };
 
 const COOKIE_KEY = "upgrade_me_cookie_consent";
+const THEME_KEY = "upgrade_me_theme";
 
 function buildWhatsAppUrl() {
   const number = String(WHATSAPP_NUMBER).replace(/\D/g, "");
@@ -152,7 +152,53 @@ function setupCookies() {
   rejectBtn.addEventListener("click", () => save("essential"));
 }
 
+function getPreferredTheme() {
+  try {
+    const saved = localStorage.getItem(THEME_KEY);
+    if (saved === "light" || saved === "dark") return saved;
+  } catch {
+    /* ignore */
+  }
+
+  if (window.matchMedia("(prefers-color-scheme: light)").matches) {
+    return "light";
+  }
+
+  return "dark";
+}
+
+function applyTheme(theme) {
+  document.documentElement.setAttribute("data-theme", theme);
+
+  document.querySelectorAll(".theme-toggle").forEach((button) => {
+    const nextLabel =
+      theme === "light" ? "Ativar modo escuro" : "Ativar modo claro";
+    button.setAttribute("aria-label", nextLabel);
+    button.setAttribute("title", nextLabel);
+  });
+}
+
+function setupThemeToggle() {
+  const current = document.documentElement.getAttribute("data-theme") || getPreferredTheme();
+  applyTheme(current);
+
+  document.querySelectorAll(".theme-toggle").forEach((button) => {
+    button.addEventListener("click", () => {
+      const active = document.documentElement.getAttribute("data-theme") || "dark";
+      const next = active === "light" ? "dark" : "light";
+      applyTheme(next);
+
+      try {
+        localStorage.setItem(THEME_KEY, next);
+      } catch {
+        /* ignore */
+      }
+    });
+  });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
+  setupThemeToggle();
   setupWhatsAppLinks();
   setupSocialLinks();
   setupMobileMenu();
