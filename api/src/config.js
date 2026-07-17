@@ -14,8 +14,20 @@ function envString(key, fallback = "") {
   return String(value).trim();
 }
 
+function envPort(fallback = 3333) {
+  const raw = process.env.PORT;
+  if (raw === undefined || raw === null || String(raw).trim() === "") {
+    return fallback;
+  }
+  const parsed = Number(raw);
+  if (!Number.isFinite(parsed) || parsed <= 0) {
+    return fallback;
+  }
+  return parsed;
+}
+
 export const config = {
-  port: Number(process.env.PORT) || 3333,
+  port: envPort(3333),
   dataDir: path.resolve(__dirname, "../data"),
   orcamentosFile: path.resolve(__dirname, "../data/orcamentos.json"),
   corsOrigin: envString("CORS_ORIGIN", "*"),
