@@ -1,6 +1,8 @@
+import { getPublicConfig } from "../config.js";
+import { requireAdminApiKey } from "../middleware/auth.js";
+import { createOrcamento, listOrcamentos } from "../services/orcamentoStore.js";
 import { getPathname, readJsonBody, sendJson } from "../utils/http.js";
 import { validateOrcamento } from "../utils/validateOrcamento.js";
-import { createOrcamento, listOrcamentos } from "../services/orcamentoStore.js";
 
 export async function handleRequest(req, res) {
   const pathname = getPathname(req.url);
@@ -13,9 +15,18 @@ export async function handleRequest(req, res) {
       version: "1.0.0",
       endpoints: {
         health: "GET /health",
+        config: "GET /config",
         createOrcamento: "POST /orcamentos",
-        listOrcamentos: "GET /orcamentos",
+        listOrcamentos: "GET /orcamentos (requer x-api-key)",
       },
+    });
+    return;
+  }
+
+  if (method === "GET" && pathname === "/config") {
+    sendJson(res, 200, {
+      ok: true,
+      data: getPublicConfig(),
     });
     return;
   }
@@ -48,7 +59,8 @@ export async function handleRequest(req, res) {
   }
 
   if (method === "GET" && pathname === "/orcamentos") {
-    // Lista local para desenvolvimento. Em produção, proteger com autenticação.
+    if (requireAdminApiKey(req, res)) return;
+
     const items = await listOrcamentos();
     sendJson(res, 200, {
       ok: true,

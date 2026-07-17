@@ -4,5 +4,7 @@ backend/data/*.tmp
 .env
 .env.*
 !.env.example
+!backend/.env.example
 .DS_Store
 Thumbs.db
+backend/node_modules/

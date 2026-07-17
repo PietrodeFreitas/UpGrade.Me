@@ -29,4 +29,5 @@ const server = http.createServer(async (req, res) => {
 server.listen(config.port, () => {
   console.log(`UpGrade.Me API rodando em http://localhost:${config.port}`);
   console.log(`Health: http://localhost:${config.port}/health`);
+  console.log(`Config: http://localhost:${config.port}/config`);
 });
