@@ -12,7 +12,8 @@ export default async function handler(req, res) {
 
     await handleRequest(req, res);
   } catch (error) {
-    const statusCode = Number(error?.statusCode) || 500;
+    const rawStatus = Number(error?.statusCode);
+    const statusCode = Number.isFinite(rawStatus) && rawStatus > 0 ? rawStatus : 500;
     const message =
       statusCode >= 500
         ? "Erro interno do servidor"
