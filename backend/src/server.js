@@ -1,34 +1,32 @@
 import http from "node:http";
+import { config } from "./config.js";
+import { applyCors, handlePreflight } from "./middleware/cors.js";
+import { handleRequest } from "./routes/router.js";
+import { sendJson } from "./utils/http.js";
 
-const PORT = Number(process.env.PORT) || 3333;
+const server = http.createServer(async (req, res) => {
+  try {
+    applyCors(req, res);
 
-const server = http.createServer((req, res) => {
-  res.setHeader("Access-Control-Allow-Origin", "*");
-  res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
-  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+    if (handlePreflight(req, res)) return;
 
-  if (req.method === "OPTIONS") {
-    res.writeHead(204);
-    res.end();
-    return;
+    await handleRequest(req, res);
+  } catch (error) {
+    const statusCode = Number(error?.statusCode) || 500;
+    const message =
+      statusCode >= 500
+        ? "Erro interno do servidor"
+        : error?.message || "Falha na requisição";
+
+    console.error("[API]", error);
+    sendJson(res, statusCode, {
+      ok: false,
+      error: message,
+    });
   }
-
-  if (req.method === "GET" && (req.url === "/" || req.url === "/health")) {
-    res.writeHead(200, { "Content-Type": "application/json; charset=utf-8" });
-    res.end(
-      JSON.stringify({
-        ok: true,
-        service: "UpGrade.Me API",
-        message: "Backend pronto para receber rotas (orçamentos, etc.).",
-      })
-    );
-    return;
-  }
-
-  res.writeHead(404, { "Content-Type": "application/json; charset=utf-8" });
-  res.end(JSON.stringify({ ok: false, error: "Rota não encontrada" }));
 });
 
-server.listen(PORT, () => {
-  console.log(`UpGrade.Me API rodando em http://localhost:${PORT}`);
+server.listen(config.port, () => {
+  console.log(`UpGrade.Me API rodando em http://localhost:${config.port}`);
+  console.log(`Health: http://localhost:${config.port}/health`);
 });

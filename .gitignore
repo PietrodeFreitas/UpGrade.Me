@@ -1,0 +1,8 @@
+node_modules/
+backend/data/orcamentos.json
+backend/data/*.tmp
+.env
+.env.*
+!.env.example
+.DS_Store
+Thumbs.db
