@@ -1,5 +1,19 @@
 {
-  "framework": null,
-  "installCommand": null,
-  "buildCommand": null
+  "buildCommand": "cd api && npm install",
+  "installCommand": "npm install && cd api && npm install",
+  "outputDirectory": "public",
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "api.js"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "public/$1"
+    },
+    {
+      "src": "/(.+)$",
+      "dest": "public/index.html"
+    }
+  ]
 }

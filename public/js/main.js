@@ -1,20 +1,42 @@
-/**
- * Coloque seu número com DDI + DDD, só dígitos.
- * Exemplo: 5511999999999
- */
-const WHATSAPP_NUMBER = "SEU_NUMERO";
 const WHATSAPP_MESSAGE = "Olá! Quero um orçamento da UpGrade.Me.";
+const API_BASE = window.location.origin;
 
-function buildWhatsAppUrl() {
-  const number = String(WHATSAPP_NUMBER).replace(/\D/g, "");
+let whatsappUrl = null;
+
+async function fetchConfig() {
+  try {
+    const res = await fetch(`${API_BASE}/api/config`);
+    if (!res.ok) throw new Error("Falha ao carregar config");
+    const { data } = await res.json();
+    return data;
+  } catch (error) {
+    console.error("Erro ao buscar config da API:", error);
+    return null;
+  }
+}
+
+function buildWhatsAppUrl(number) {
+  if (!number) return null;
   const text = encodeURIComponent(WHATSAPP_MESSAGE);
   return `https://wa.me/${number}?text=${text}`;
 }
 
-function setupWhatsAppLinks() {
-  const url = buildWhatsAppUrl();
+async function setupWhatsAppLinks() {
+  if (!whatsappUrl) {
+    const config = await fetchConfig();
+    whatsappUrl = config?.whatsappUrl || null;
+  }
+
   document.querySelectorAll(".js-whatsapp").forEach((link) => {
-    link.setAttribute("href", url);
+    if (whatsappUrl) {
+      link.setAttribute("href", whatsappUrl);
+      link.removeAttribute("aria-disabled");
+      link.classList.remove("is-pending");
+    } else {
+      link.setAttribute("href", "#");
+      link.setAttribute("aria-disabled", "true");
+      link.classList.add("is-pending");
+    }
   });
 }
 
@@ -86,8 +108,8 @@ function setupReveal() {
   items.forEach((el) => observer.observe(el));
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-  setupWhatsAppLinks();
+document.addEventListener("DOMContentLoaded", async () => {
+  await setupWhatsAppLinks();
   setupMobileMenu();
   setupFaq();
   setupReveal();
