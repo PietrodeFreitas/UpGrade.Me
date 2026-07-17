@@ -42,7 +42,11 @@ export function readJsonBody(req, { maxBytes = 32_768 } = {}) {
 
 export function getPathname(url) {
   try {
-    return new URL(url, "http://localhost").pathname.replace(/\/+$/, "") || "/";
+    let pathname = new URL(url, "http://localhost").pathname.replace(/\/+$/, "") || "/";
+    if (pathname === "/api" || pathname.startsWith("/api/")) {
+      pathname = pathname.slice(4) || "/";
+    }
+    return pathname;
   } catch {
     return "/";
   }
