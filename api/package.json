@@ -1,0 +1,17 @@
+{
+  "name": "upgrade-me-api",
+  "version": "1.0.0",
+  "private": true,
+  "description": "API UpGrade.Me — orçamentos e integrações",
+  "main": "src/server.js",
+  "type": "module",
+  "scripts": {
+    "dev": "node --watch src/server.js",
+    "start": "node src/server.js",
+    "vercel-build": "echo 'API ready for Vercel'"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {}
+}

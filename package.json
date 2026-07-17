@@ -1,0 +1,14 @@
+{
+  "name": "upgrade-me",
+  "version": "1.0.0",
+  "private": true,
+  "description": "UpGrade.Me - Formatação e backup de PC, celular e tablet",
+  "scripts": {
+    "install-all": "npm install && cd api && npm install",
+    "dev": "cd api && npm run dev",
+    "start": "cd api && npm start"
+  },
+  "workspaces": [
+    "api"
+  ]
+}
