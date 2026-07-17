@@ -2,7 +2,7 @@
   "name": "upgrade-me-backend",
   "version": "1.0.0",
   "private": true,
-  "description": "API UpGrade.Me — orçamentos e integrações futuras",
+  "description": "API UpGrade.Me — orçamentos e integrações",
   "main": "src/server.js",
   "type": "module",
   "scripts": {
